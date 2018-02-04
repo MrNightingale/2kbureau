@@ -1,0 +1,83 @@
+@import "mixin";
+
+@font-face {
+  font-family: Caladea;
+  src: url(../fonts/Caladea.ttf);
+}
+
+@font-face {
+  //TODO clarify where Perpetua Titling MT font is used
+  font-family: "Perpetua Titling MT";
+  src: url(../fonts/perpetua.ttf);
+}
+
+html {
+  // TODO add fonts as a fallback alternative
+  font-family: Caladea;
+}
+
+body {
+  font-size: calc(16px + 1vw);
+  line-height: calc(2em + 0.5vw);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 300px;
+
+  @include mobile {
+    margin-bottom: 100px;
+  }
+
+  &__logo {
+
+    .logo__img {
+      max-width: 100%;
+      height: auto;
+
+      @include mobile {
+        max-width: 60%;
+      }
+    }
+
+  }
+
+  &__caption {
+    //TODO what font can be used for header caption
+    font-family: "Perpetua Titling MT";
+    margin: 0;
+  }
+
+  &__subcaption {
+    margin: 0;
+  }
+}
+
+.footer {
+  text-align: center;
+
+  &__header {
+    margin-top: 0;
+  }
+
+  &__social {
+
+    .social__link {
+      text-decoration: none;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .social__img {
+      max-width: 100%;
+      height: auto;
+
+      @include mobile {
+        max-width: 10%;
+      }
+    }
+  }
+}

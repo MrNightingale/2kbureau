@@ -1,0 +1,28 @@
+$break-small: 768px;
+$break-middle: 992px;
+$break-large: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$break-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$break-small}) and (max-width: #{$break-middle - 1px}) {
+    @content;
+  }
+}
+
+// tablet and mobile mixin
+@mixin tabmob {
+  @media (max-width: #{$break-middle - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$break-middle}) and (max-width: #{$break-large - 1px}) {
+    @content;
+  }
+}
